@@ -3,7 +3,7 @@ USER root
 WORKDIR /app
 #download amazon corretto from https://docs.aws.amazon.com/corretto/latest/corretto-8-ug/downloads-list.html
 RUN curl -SL https://corretto.aws/downloads/latest/amazon-corretto-8-x64-linux-jdk.rpm
-RUN rpm -i java-1.8.0-amazon-corretto-devel-1.8.0_302.b08-1.x86_64.rpm \
+RUN rpm -i amazon-corretto-8-x64-linux-jdk.rpm \
 	&& rm -rf /app/ 
 ARG JAR_FILE=build/libs/*.jar
 COPY ${JAR_FILE} /opt/pmadmin/app.jar
